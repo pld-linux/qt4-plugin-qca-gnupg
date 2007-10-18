@@ -24,12 +24,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_plugindir %{_libdir}/qt4/plugins/crypto
 
 %description
-A plugin to provide GNU Privacy Guard capability to programs that utilize the Qt
-Cryptographic Architecture (QCA).
+A plugin to provide GNU Privacy Guard capability to programs that
+utilize the Qt Cryptographic Architecture (QCA).
 
 %description -l pl.UTF-8
-Wtyczka pozwalająca wykorzystać możliwościGNU Privacy Guard w programach
-korzystających z Qt Cryptographic Architecture (QCA).
+Wtyczka pozwalająca wykorzystać możliwościGNU Privacy Guard w
+programach korzystających z Qt Cryptographic Architecture (QCA).
 
 %prep
 %setup -qn %{rname}-%{version}-%{snap}
