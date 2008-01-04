@@ -1,8 +1,6 @@
 %define		rname qca-gnupg
 #
 %define	snap	20070904
-# chrpath stripping fails
-%define no_install_post_chrpath 1
 Summary:	Qt Cryptographic Architecture (QCA) GNU Privacy Guard plugin
 Summary(pl.UTF-8):	Wtyczka GNU Privacy Guard dla Qt Cryptographic Architecture (QCA)
 Name:		qt4-plugin-%{rname}
@@ -17,18 +15,21 @@ URL:		http://delta.affinix.com/qca/
 BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	qca-devel >= 2.0.0
-BuildRequires:	qt4-qmake
+BuildRequires:	qt4-qmake >= 4.3.3-3
 Requires:	gnupg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_plugindir %{_libdir}/qt4/plugins/crypto
+
+# chrpath stripping fails
+%define		no_install_post_chrpath	1
 
 %description
 A plugin to provide GNU Privacy Guard capability to programs that
 utilize the Qt Cryptographic Architecture (QCA).
 
 %description -l pl.UTF-8
-Wtyczka pozwalająca wykorzystać możliwościGNU Privacy Guard w
+Wtyczka pozwalająca wykorzystać możliwości GNU Privacy Guard w
 programach korzystających z Qt Cryptographic Architecture (QCA).
 
 %prep
@@ -38,7 +39,7 @@ programach korzystających z Qt Cryptographic Architecture (QCA).
 export QTDIR=%{_libdir}/qt4
 ./configure
 
-%{_libdir}/qt4/bin/qmake %{rname}.pro \
+qmake-qt4 %{rname}.pro \
 	QMAKE_CXX="%{__cxx}" \
 	QMAKE_LINK="%{__cxx}" \
 	QMAKE_CXXFLAGS_RELEASE="%{rpmcflags}" \
