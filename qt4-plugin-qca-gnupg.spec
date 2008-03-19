@@ -5,7 +5,7 @@ Summary:	Qt Cryptographic Architecture (QCA) GNU Privacy Guard plugin
 Summary(pl.UTF-8):	Wtyczka GNU Privacy Guard dla Qt Cryptographic Architecture (QCA)
 Name:		qt4-plugin-%{rname}
 Version:	0.1
-Release:	0.%{snap}.3
+Release:	0.%{snap}.4
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
