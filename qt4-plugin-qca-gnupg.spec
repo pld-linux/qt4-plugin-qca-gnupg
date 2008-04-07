@@ -1,22 +1,21 @@
 %define		rname qca-gnupg
 #
-%define	snap	20070904
+%define	snap	beta2
 Summary:	Qt Cryptographic Architecture (QCA) GNU Privacy Guard plugin
 Summary(pl.UTF-8):	Wtyczka GNU Privacy Guard dla Qt Cryptographic Architecture (QCA)
 Name:		qt4-plugin-%{rname}
-Version:	0.1
-Release:	0.%{snap}.5
+Version:	2.0.0
+Release:	0.%{snap}.1
 Epoch:		1
 License:	LGPL v2.1
 Group:		Libraries
-Source0:	http://delta.affinix.com/download/qca/2.0/test4/qca-gnupg-%{version}-%{snap}.tar.bz2
-# Source0-md5:	8a2ba2a8ac51363d2933c05a100c530e
+Source0:	http://delta.affinix.com/download/qca/2.0/plugins/qca-gnupg-%{version}-%{snap}.tar.bz2
+# Source0-md5:	491f8acb97e9943cb1c8822000516ed6
 URL:		http://delta.affinix.com/qca/
 BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qt4-qmake >= 4.3.3-3
-%requires_eq	QtCore
 Requires:	gnupg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
